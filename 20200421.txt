@@ -1,0 +1,62 @@
+﻿String类
+
+1、简介：
+JDK1.8以前String保存的是字符数组：
+private final char value[];
+
+JDK1.9以后String保存的是字节数组：
+private final byte[] value;
+
+所谓的字符串就是对数组的一种特殊包装应用，final修饰无法改变。对于已经存在的String对象的修改都是重新创建一个新的对象,然后把新的值保存进去。
+
+2、字符串比较：
+	String中使用equals()方法进行字符串的比较。
+	
+	==和equals()的区别
+	==：进行的是数值比较，如果用于对象比较则比较的是两个内存的地址是否相同
+	equals()：是类提供的一个比较的方法，可以直接进行字符串内容的比较。
+	
+3、字符串常量
+	字符串常量是String类的匿名对象。
+	public static void main(String[] args) {
+    	String x="fmn";
+    	System.out.println("fmn".equals(x));
+    }
+	结果输出true，说明字符串常量已经可以调用equals()方法实现对象相等的判断，所以"fmn"是一个匿名对象。
+	字符串常量进行判断时最好放在.equals()的前面，否则有可能出现NullPointerException异常。
+	
+4、String类对象两种实例化方式的比较
+	1.直接赋值
+	String a = "apple";
+	String b = "apple";
+	在Java的底层里面提供有一个专门的字符串池
+	2.构造方法实例化
+5、String对象常量池
+	静态常量池：指的是程序(*.class)在加载的时候会自动将此程序之中保存的字符串、普通常量、类和方法等信息，全部进行分配
+	String a = "apple";
+	String b = "a"+"pple";
+	System.out.println(a==b); (true 全部是常量数据)
+	运行时常量池：当一个程序(*.class)加载之后，可能有一些变量，此时提供的常量池
+	String a = "apple";
+	String info = "a";
+	String b = info +"pple";
+	System.out.println(a==b); (false 因为程序在加载的时候并不能确定info的内容，因为在字符串拼接的时候，info是一个变量，变量
+	的内容是可以修改的。)
+6、String、StringBuffer、StringBuilder的区别
+	1.StringBuilder与StringBuffer都继承自AbstractStringBuilder类，在AbstractStringBuilder中也是使用字符数组保存字符串，
+	char[] value，所以这两种对象都是可变的。
+	StringBuffer是一个可变对象,当对他进行修改的时候不会像String那样重新建立对象，而是通过构造函数来建立
+	例如：StringBuffer sb = new StringBuffer();
+	StringBuffer中赋值的时候可以通过它的append方法.  sb.append("hello");
+	2.线程安全
+	String是线程安全的。(不可变)
+	StringBuffer对方法加了同步锁或者对调用的方法加了同步锁，也是线程安全的
+	StringBuilder并没有对方法进行加同步锁，所以是非线程安全的
+	所以在单线程的时候StringBuilder执行效率大于StringBuffer，但是如果是常量相加则String效率最高
+
+indexOf()查询位置，从前向后，查不到为-1
+	
+1、volatile关键字 synchronized关键字
+	
+
+2、通过ServletConfig接口的getInitParameter(java.lang.String name)方法获得Servlet的初始化参数
