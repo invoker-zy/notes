@@ -1,0 +1,25 @@
+Float类和Double类都重写对于的equals方法，在比较之前都会判断是否同属于Float对象或Double对象，如果不是直接返回false，如果是再继续比较对应的数值大小。
+
+1.类与类之间的关系为继承，只能单继承，但可以多层继承。 2.类与接口之间的关系为实现，既可以单实现，也可以多实现。 3.接口与接口之间的关系为继承，既可以单继承，也可以多继承。
+
+接口和抽象类
+
+单例
+
+object方法
+clone();
+equals();
+finalize();
+getClass();[align=left][/align]
+notify(),notifyAll();
+hashCode();
+toString();
+wait();
+
+final修饰变量，变量的引用（也就是指向的地址）不可变，但是引用的内容可以变（地址中的内容可变）
+finally表示总是执行。但是其实finally也有不执行的时候。
+1. 在try中调用System.exit(0)，强制退出了程序，finally块不执行。
+2. 在进入try块前，出现了异常，finally块不执行。
+finalize方法，一个对象只能执行一次，只能在第一次进入被回收的队列，而且对象所属于的类重写了finalize方法才会被执行。第二次进入回收队列的时候，不会再执行其finalize方法，而是直接被二次标记，在下一次GC的时候被GC。
+
+构造方法
