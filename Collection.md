@@ -9,7 +9,7 @@
 *   Map下有Hashtable，LinkedHashMap，HashMap，TreeMap
 *   Collection接口下还有个Queue接口，有PriorityQueue类
 
-![这里写图片描述](https://img-blog.csdn.net/20180612094225630?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3poYW5ncXVuc2h1YWk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![](https://img-blog.csdn.net/20180612094225630?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3poYW5ncXVuc2h1YWk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 ## <a name="t2"></a><a name="t2"></a><a id="_13"></a>注意:
 
@@ -62,8 +62,8 @@
 *   TreeSet
 
     底层数据结构是红黑树。(唯一，有序)
-
-        1. 如何保证元素排序的呢?
+    
+    1.如何保证元素排序的呢?
 
     自然排序
 
@@ -130,21 +130,21 @@ Map接口有三个比较重要的实现类，分别是HashMap、TreeMap和HashTa
 ### <a name="t7"></a><a name="t7"></a><a id="TreeSet_LinkedHashSet_and_HashSet__95"></a>(一).TreeSet, LinkedHashSet and HashSet 的区别
 
 > **1. 介绍**
-> *   TreeSet, LinkedHashSet and HashSet 在java中都是实现Set的数据结构
+*   TreeSet, LinkedHashSet and HashSet 在java中都是实现Set的数据结构
 
 *   TreeSet的主要功能用于排序
 *   LinkedHashSet的主要功能用于保证FIFO即有序的集合(先进先出)
 *   HashSet只是通用的存储数据的集合
 > **2. 相同点**
-> *   Duplicates elements: 因为三者都实现Set interface，所以三者都不包含duplicate elements
-> *   Thread safety: 三者都不是线程安全的，如果要使用线程安全可以Collections.synchronizedSet()
+*   Duplicates elements: 因为三者都实现Set interface，所以三者都不包含duplicate elements
+*   Thread safety: 三者都不是线程安全的，如果要使用线程安全可以Collections.synchronizedSet()
 > **3. 不同点**
-> *   Performance and Speed: HashSet插入数据最快，其次LinkHashSet，最慢的是TreeSet因为内部实现排序
+*   Performance and Speed: HashSet插入数据最快，其次LinkHashSet，最慢的是TreeSet因为内部实现排序
 
 *   Ordering: HashSet不保证有序，LinkHashSet保证FIFO即按插入顺序排序，**TreeSet安装内部实现排序，也可以自定义排序规则**
 *   null:HashSet和LinkHashSet允许存在null数据，但是TreeSet中插入null数据时会报NullPointerException
 > **4. 代码比较**
-<pre class="prettyprint">`  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="prettyprint">  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         HashSet<span class="token generics function"><span class="token punctuation">&lt;</span>String<span class="token punctuation">&gt;</span></span> hashSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         LinkedHashSet<span class="token generics function"><span class="token punctuation">&lt;</span>String<span class="token punctuation">&gt;</span></span> linkedHashSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedHashSet</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         TreeSet<span class="token generics function"><span class="token punctuation">&lt;</span>String<span class="token punctuation">&gt;</span></span> treeSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -181,7 +181,7 @@ Map接口有三个比较重要的实现类，分别是HashMap、TreeMap和HashTa
 
 由于TreeSet可以实现对元素按照某种规则进行排序，例如下面的例子
 
-<pre class="prettyprint">`<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyClass</span> <span class="token punctuation">{</span>
+<pre class="prettyprint"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyClass</span> <span class="token punctuation">{</span>
 
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment">// 创建集合对象</span>
@@ -229,7 +229,7 @@ Map接口有三个比较重要的实现类，分别是HashMap、TreeMap和HashTa
 
 测试类:
 
-<pre class="prettyprint">`<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyClass</span> <span class="token punctuation">{</span>
+<pre class="prettyprint"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyClass</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         TreeSet<span class="token generics function"><span class="token punctuation">&lt;</span>Student<span class="token punctuation">&gt;</span></span> ts<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token generics function"><span class="token punctuation">&lt;</span>Student<span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment">//创建元素对象</span>
@@ -259,7 +259,7 @@ Map接口有三个比较重要的实现类，分别是HashMap、TreeMap和HashTa
 
 Student.java:
 
-<pre class="prettyprint">`<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">{</span>
+<pre class="prettyprint"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
     <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
 
@@ -296,7 +296,7 @@ Student.java:
 
 结果报错:
 
-> ![这里写图片描述](https://img-blog.csdn.net/20180612112054186?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3poYW5ncXVuc2h1YWk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+> ![](https://img-blog.csdn.net/20180612112054186?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3poYW5ncXVuc2h1YWk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 > 
 > 原因分析：
 > 
@@ -316,11 +316,11 @@ Student.java:
 
 2.重写Comparable接口中的Compareto方法
 
-<pre class="prettyprint">`<span class="token function">compareTo</span><span class="token punctuation">(</span>T o<span class="token punctuation">)</span>  比较此对象与指定对象的顺序。
+<pre class="prettyprint"><span class="token function">compareTo</span><span class="token punctuation">(</span>T o<span class="token punctuation">)</span>  比较此对象与指定对象的顺序。
 <div class="hljs-button {2}" data-title="复制"></div>`
 
-*   1</pre>
-<pre class="prettyprint">`<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token keyword">implements</span> <span class="token class-name">Comparable</span><span class="token generics function"><span class="token punctuation">&lt;</span>Student<span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span>
+</pre>
+<pre class="prettyprint"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token keyword">implements</span> <span class="token class-name">Comparable</span><span class="token generics function"><span class="token punctuation">&lt;</span>Student<span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span>
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
     <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
 
@@ -393,14 +393,14 @@ Student.java:
 
 2.重写Comparator接口中的Compare方法
 
-<pre class="prettyprint">`<span class="token function">compare</span><span class="token punctuation">(</span>T o1<span class="token punctuation">,</span>T o2<span class="token punctuation">)</span>      比较用来排序的两个参数。
+<pre class="prettyprint"><span class="token function">compare</span><span class="token punctuation">(</span>T o1<span class="token punctuation">,</span>T o2<span class="token punctuation">)</span>      比较用来排序的两个参数。
 <div class="hljs-button {2}" data-title="复制"></div>`
 
 *   1</pre>
 
 3.在主类中使用下面的 构造方法
 
-<pre class="prettyprint">`<span class="token function">TreeSet</span><span class="token punctuation">(</span>Comparator<span class="token operator">&lt;</span><span class="token operator">?</span> superE<span class="token operator">&gt;</span> comparator<span class="token punctuation">)</span>
+<pre class="prettyprint"><span class="token function">TreeSet</span><span class="token punctuation">(</span>Comparator<span class="token operator">&lt;</span><span class="token operator">?</span> superE<span class="token operator">&gt;</span> comparator<span class="token punctuation">)</span>
           构造一个新的空 TreeSet，它根据指定比较器进行排序。
 <div class="hljs-button {2}" data-title="复制"></div>`
 
@@ -409,7 +409,7 @@ Student.java:
 
 测试类:
 
-<pre class="prettyprint">`<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyClass</span> <span class="token punctuation">{</span>
+<pre class="prettyprint"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyClass</span> <span class="token punctuation">{</span>
 
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment">//创建集合对象</span>
@@ -444,7 +444,7 @@ Student.java:
 
 Student.java:
 
-<pre class="prettyprint">`<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">{</span>
+<pre class="prettyprint"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
     <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
 
@@ -482,7 +482,7 @@ Student.java:
 
 MyComparator类：
 
-<pre class="prettyprint">`<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyComparator</span> <span class="token keyword">implements</span> <span class="token class-name">Comparator</span><span class="token generics function"><span class="token punctuation">&lt;</span>Student<span class="token punctuation">&gt;</span></span> <span class="token punctuation">{</span>
+<pre class="prettyprint"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyComparator</span> <span class="token keyword">implements</span> <span class="token class-name">Comparator</span><span class="token generics function"><span class="token punctuation">&lt;</span>Student<span class="token punctuation">&gt;</span></span> <span class="token punctuation">{</span>
 
     <span class="token annotation punctuation">@Override</span>
     <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compare</span><span class="token punctuation">(</span>Student s1<span class="token punctuation">,</span>Student s2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -516,7 +516,7 @@ MyComparator类：
 
 对象类:
 
-<pre class="prettyprint">`<span class="token keyword">class</span> <span class="token class-name">Dog</span> <span class="token keyword">implements</span> <span class="token class-name">Comparable</span><span class="token generics function"><span class="token punctuation">&lt;</span>Dog<span class="token punctuation">&gt;</span></span> <span class="token punctuation">{</span>
+<pre class="prettyprint"><span class="token keyword">class</span> <span class="token class-name">Dog</span> <span class="token keyword">implements</span> <span class="token class-name">Comparable</span><span class="token generics function"><span class="token punctuation">&lt;</span>Dog<span class="token punctuation">&gt;</span></span> <span class="token punctuation">{</span>
     <span class="token keyword">int</span> size<span class="token punctuation">;</span>
     <span class="token keyword">public</span> <span class="token function">Dog</span><span class="token punctuation">(</span><span class="token keyword">int</span> s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         size <span class="token operator">=</span> s<span class="token punctuation">;</span>
@@ -534,7 +534,7 @@ MyComparator类：
 
 主类:
 
-<pre class="prettyprint">`<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyClass</span> <span class="token punctuation">{</span>
+<pre class="prettyprint"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyClass</span> <span class="token punctuation">{</span>
 
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
